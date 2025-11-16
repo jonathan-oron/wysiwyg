@@ -4,22 +4,24 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const badgeVariants = cva(
-  'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 font-mono uppercase tracking-wide',
+  'inline-flex items-center rounded-full border-2 px-3 py-1 text-xs font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 font-display tracking-wide shadow-sm',
   {
     variants: {
       variant: {
         default:
-          'border-transparent bg-primary text-primary-foreground hover:bg-primary-hover shadow-focus',
+          'border-vibrant-pink/30 bg-gradient-accent-warm text-white hover:shadow-accent-strong hover:scale-105',
         secondary:
-          'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
+          'border-soft-lavender bg-soft-lavender text-vibrant-purple hover:bg-soft-pink hover:shadow-md',
         success:
-          'border-success/50 bg-card text-success',
+          'border-vibrant-green/50 bg-soft-mint text-vibrant-green hover:shadow-md',
         warning:
-          'border-warning/50 bg-card text-warning',
+          'border-vibrant-yellow/50 bg-soft-lemon text-vibrant-yellow hover:shadow-md',
         error:
-          'border-error/50 bg-card text-error',
-        info: 'border-info/50 bg-card text-info',
-        outline: 'border-primary text-primary bg-transparent',
+          'border-vibrant-pink/50 bg-soft-pink text-vibrant-pink hover:shadow-accent-strong',
+        info: 'border-vibrant-cyan/50 bg-soft-sky text-vibrant-cyan hover:shadow-md',
+        outline: 'border-vibrant-purple text-vibrant-purple bg-transparent hover:bg-soft-lavender',
+        vibrant: 'border-transparent bg-gradient-primary text-white hover:shadow-accent-multi hover:scale-105',
+        brand: 'border-brand-primary/30 bg-gradient-brand text-white hover:shadow-accent-combined hover:scale-105',
       },
     },
     defaultVariants: {

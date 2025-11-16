@@ -4,18 +4,19 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const alertVariants = cva(
-  'relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground',
+  'relative w-full rounded-2xl border-2 p-5 shadow-md [&>svg~*]:pl-8 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-5 [&>svg]:top-5 [&>svg]:text-foreground transition-all duration-200',
   {
     variants: {
       variant: {
-        default: 'bg-background text-foreground border-border',
+        default: 'bg-soft-lavender text-foreground border-soft-lavender hover:shadow-lg',
         success:
-          'border-success/50 text-success bg-card [&>svg]:text-success',
+          'border-vibrant-green/50 text-vibrant-green bg-soft-mint [&>svg]:text-vibrant-green hover:shadow-md hover:border-vibrant-green',
         warning:
-          'border-warning/50 text-warning bg-card [&>svg]:text-warning',
+          'border-vibrant-yellow/50 text-vibrant-yellow bg-soft-lemon [&>svg]:text-vibrant-yellow hover:shadow-md hover:border-vibrant-yellow',
         error:
-          'border-error/50 text-error bg-card [&>svg]:text-error',
-        info: 'border-info/50 text-info bg-card [&>svg]:text-info',
+          'border-vibrant-pink/50 text-vibrant-pink bg-soft-pink [&>svg]:text-vibrant-pink hover:shadow-accent-strong hover:border-vibrant-pink',
+        info: 'border-vibrant-cyan/50 text-vibrant-cyan bg-soft-sky [&>svg]:text-vibrant-cyan hover:shadow-md hover:border-vibrant-cyan',
+        accent: 'border-transparent bg-gradient-soft text-vibrant-purple [&>svg]:text-vibrant-purple hover:shadow-accent-multi',
       },
     },
     defaultVariants: {
@@ -43,7 +44,7 @@ const AlertTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h5
     ref={ref}
-    className={cn('mb-1 font-medium leading-none tracking-tight font-mono', className)}
+    className={cn('mb-1 font-bold leading-none tracking-tight font-display', className)}
     {...props}
   />
 ))
@@ -55,7 +56,7 @@ const AlertDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('text-sm [&_p]:leading-relaxed font-sans', className)}
+    className={cn('text-sm [&_p]:leading-relaxed font-sans opacity-90', className)}
     {...props}
   />
 ))
