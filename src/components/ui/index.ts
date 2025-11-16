@@ -18,6 +18,7 @@ export * from './card/Card'
 export * from './container/Container'
 export * from './divider/Divider'
 export * from './spacer/Spacer'
+export * from './separator/Separator'
 
 // Feedback Components
 export * from './alert/Alert'
@@ -27,3 +28,11 @@ export * from './icon/Icon'
 export * from './toast/Toast'
 export * from './toast/Toaster'
 export * from './toast/use-toast'
+
+// Overlay Components
+export * from './dialog/Dialog'
+export * from './dropdown-menu/DropdownMenu'
+export * from './tooltip/Tooltip'
+
+// Data Display Components
+export * from './avatar/Avatar'

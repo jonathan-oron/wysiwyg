@@ -55,4 +55,81 @@
       opacity: 0;
     }
   }
+
+  /* Prose styling for TipTap editor */
+  .prose {
+    @apply text-foreground;
+  }
+
+  .prose h1 {
+    @apply text-4xl font-bold text-primary mb-4 mt-6 font-mono;
+  }
+
+  .prose h2 {
+    @apply text-3xl font-bold text-primary mb-3 mt-5 font-mono;
+  }
+
+  .prose h3 {
+    @apply text-2xl font-bold text-primary mb-2 mt-4 font-mono;
+  }
+
+  .prose p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  .prose a {
+    @apply text-primary underline hover:text-primary-hover;
+  }
+
+  .prose ul {
+    @apply list-disc list-inside mb-4 space-y-2;
+  }
+
+  .prose ol {
+    @apply list-decimal list-inside mb-4 space-y-2;
+  }
+
+  .prose li {
+    @apply text-foreground;
+  }
+
+  .prose code {
+    @apply bg-terminal-black-light px-2 py-1 rounded text-primary font-mono text-sm;
+  }
+
+  .prose pre {
+    @apply bg-terminal-black-light border border-border rounded p-4 overflow-x-auto mb-4;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary pl-4 italic text-muted-foreground my-4;
+  }
+
+  .prose table {
+    @apply w-full border-collapse my-4;
+  }
+
+  .prose th {
+    @apply border border-border bg-terminal-black-light p-2 text-left font-bold text-primary;
+  }
+
+  .prose td {
+    @apply border border-border p-2;
+  }
+
+  .prose img {
+    @apply max-w-full h-auto rounded my-4;
+  }
+
+  .prose strong {
+    @apply font-bold text-primary;
+  }
+
+  .prose em {
+    @apply italic;
+  }
 }
