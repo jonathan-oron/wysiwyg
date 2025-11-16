@@ -70,9 +70,9 @@ const Loading = React.forwardRef<HTMLDivElement, LoadingProps>(
           {...props}
         >
           <div className={cn(loadingVariants({ variant }))}>
-            <span className="h-2 w-2 bg-primary rounded-full animate-bounce [animation-delay:-0.3s]"></span>
-            <span className="h-2 w-2 bg-primary rounded-full animate-bounce [animation-delay:-0.15s]"></span>
-            <span className="h-2 w-2 bg-primary rounded-full animate-bounce"></span>
+            <span className="h-icon-xs w-icon-xs bg-primary rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+            <span className="h-icon-xs w-icon-xs bg-primary rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+            <span className="h-icon-xs w-icon-xs bg-primary rounded-full animate-bounce"></span>
           </div>
           {text && <span className="text-sm text-muted-foreground font-mono">{text}</span>}
         </div>
