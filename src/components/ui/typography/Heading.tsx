@@ -14,11 +14,11 @@ const headingVariants = cva('font-sans font-bold text-foreground tracking-tight'
       h6: 'text-lg leading-normal',
     },
     gradient: {
-      true: 'bg-gradient-to-r from-terminal-green to-terminal-cyan bg-clip-text text-transparent',
+      true: 'bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent',
       false: '',
     },
     glow: {
-      true: 'terminal-glow',
+      true: 'text-glow',
       false: '',
     },
   },

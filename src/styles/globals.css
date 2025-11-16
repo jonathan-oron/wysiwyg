@@ -16,16 +16,16 @@
 }
 
 @layer components {
-  /* Terminal-specific utilities */
-  .terminal-glow {
+  /* Text effect utilities */
+  .text-glow {
     text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
   }
 
-  .terminal-scanline {
+  .scanline-effect {
     position: relative;
   }
 
-  .terminal-scanline::before {
+  .scanline-effect::before {
     content: "";
     position: absolute;
     top: 0;
@@ -42,7 +42,7 @@
     opacity: 0.3;
   }
 
-  .terminal-cursor::after {
+  .cursor-blink::after {
     content: "▊";
     animation: blink 1s step-end infinite;
   }
@@ -94,11 +94,11 @@
   }
 
   .prose code {
-    @apply bg-terminal-black-light px-2 py-1 rounded text-primary font-mono text-sm;
+    @apply bg-card px-2 py-1 rounded text-primary font-mono text-sm;
   }
 
   .prose pre {
-    @apply bg-terminal-black-light border border-border rounded p-4 overflow-x-auto mb-4;
+    @apply bg-card border border-border rounded p-4 overflow-x-auto mb-4;
   }
 
   .prose pre code {
@@ -114,7 +114,7 @@
   }
 
   .prose th {
-    @apply border border-border bg-terminal-black-light p-2 text-left font-bold text-primary;
+    @apply border border-border bg-card p-2 text-left font-bold text-primary;
   }
 
   .prose td {

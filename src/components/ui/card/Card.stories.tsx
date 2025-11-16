@@ -23,7 +23,7 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'terminal', 'elevated'],
+      options: ['default', 'highlighted', 'elevated'],
     },
     padding: {
       control: 'select',
@@ -70,18 +70,18 @@ export const Default: Story = {
 
 export const TerminalVariant: Story = {
   render: () => (
-    <Card variant="terminal" className="w-[350px]">
+    <Card variant="highlighted" className="w-[350px]">
       <CardHeader>
         <CardTitle>terminal.exe</CardTitle>
         <CardDescription>Active session</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-1 font-mono text-sm">
-          <div className="text-terminal-green">$ whoami</div>
-          <div className="text-terminal-gray-400">root</div>
-          <div className="text-terminal-green">$ pwd</div>
-          <div className="text-terminal-gray-400">/home/user/projects</div>
-          <div className="text-terminal-green terminal-cursor">$ _</div>
+          <div className="text-primary">$ whoami</div>
+          <div className="text-muted-foreground">root</div>
+          <div className="text-primary">$ pwd</div>
+          <div className="text-muted-foreground">/home/user/projects</div>
+          <div className="text-primary cursor-blink">$ _</div>
         </div>
       </CardContent>
     </Card>
@@ -139,8 +139,8 @@ export const Elevated: Story = {
 export const NoPadding: Story = {
   render: () => (
     <Card padding="none" className="w-[350px] overflow-hidden">
-      <div className="bg-terminal-green h-32 flex items-center justify-center">
-        <Terminal className="h-16 w-16 text-terminal-black" />
+      <div className="bg-primary h-32 flex items-center justify-center">
+        <Terminal className="h-16 w-16 text-primary-foreground" />
       </div>
       <div className="p-6">
         <CardTitle className="mb-2">Custom Layout</CardTitle>

@@ -49,7 +49,7 @@ export const TipTapEditor = ({ content, onUpdate }: TipTapEditorProps) => {
       TableRow,
       TableHeader.configure({
         HTMLAttributes: {
-          class: 'border border-border bg-terminal-black-light p-2 font-bold',
+          class: 'border border-border bg-card p-2 font-bold',
         },
       }),
       TableCell.configure({
@@ -65,7 +65,7 @@ export const TipTapEditor = ({ content, onUpdate }: TipTapEditorProps) => {
       CodeBlockLowlight.configure({
         lowlight,
         HTMLAttributes: {
-          class: 'bg-terminal-black-light border border-border rounded p-4 font-mono text-sm overflow-x-auto',
+          class: 'bg-card border border-border rounded p-4 font-mono text-sm overflow-x-auto',
         },
       }),
     ],

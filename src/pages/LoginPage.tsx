@@ -21,7 +21,7 @@ export const LoginPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-background p-4">
       <div className="mb-8 flex items-center space-x-2">
-        <Terminal className="h-8 w-8 text-primary terminal-glow" />
+        <Terminal className="h-8 w-8 text-primary text-glow" />
         <h1 className="text-2xl font-bold font-mono text-primary">WYSIWYG Editor</h1>
       </div>
 

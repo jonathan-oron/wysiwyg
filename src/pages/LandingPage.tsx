@@ -10,7 +10,7 @@ export const LandingPage = () => {
         {/* Hero Section */}
         <section className="py-20 text-center">
           <div className="max-w-4xl mx-auto">
-            <Heading level="h1" className="mb-6 text-5xl md:text-6xl terminal-glow">
+            <Heading level="h1" className="mb-6 text-5xl md:text-6xl text-glow">
               Write with Power
             </Heading>
             <Text size="lg" className="mb-8 max-w-2xl mx-auto">
@@ -45,7 +45,7 @@ export const LandingPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <Card variant="terminal" className="hover:shadow-glow-cyan transition-all">
+            <Card variant="highlighted" className="hover:shadow-accent transition-all">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Zap className="h-6 w-6 text-primary" />
@@ -65,7 +65,7 @@ export const LandingPage = () => {
               </CardContent>
             </Card>
 
-            <Card variant="terminal" className="hover:shadow-glow-cyan transition-all">
+            <Card variant="highlighted" className="hover:shadow-accent transition-all">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Cloud className="h-6 w-6 text-primary" />
@@ -85,7 +85,7 @@ export const LandingPage = () => {
               </CardContent>
             </Card>
 
-            <Card variant="terminal" className="hover:shadow-glow-cyan transition-all">
+            <Card variant="highlighted" className="hover:shadow-accent transition-all">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-primary" />
@@ -109,7 +109,7 @@ export const LandingPage = () => {
 
         {/* CTA Section */}
         <section className="py-20">
-          <Card variant="terminal" className="max-w-4xl mx-auto text-center">
+          <Card variant="highlighted" className="max-w-4xl mx-auto text-center">
             <CardContent className="p-12">
               <Heading level="h2" className="mb-4">
                 Ready to Start Writing?

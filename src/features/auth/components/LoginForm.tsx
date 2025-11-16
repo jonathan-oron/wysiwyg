@@ -27,7 +27,7 @@ export const LoginForm = () => {
   }
 
   return (
-    <Card className="w-full max-w-md" variant="terminal">
+    <Card className="w-full max-w-md" variant="highlighted">
       <CardHeader>
         <CardTitle>Sign In</CardTitle>
         <CardDescription>

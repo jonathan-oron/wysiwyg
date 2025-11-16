@@ -12,7 +12,7 @@ export const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
-        <div className="text-primary font-mono terminal-glow">Loading...</div>
+        <div className="text-primary font-mono text-glow">Loading...</div>
       </div>
     )
   }

@@ -8,9 +8,9 @@ const codeVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-terminal-black-light border-terminal-gray-700 text-terminal-green',
-        inline: 'bg-terminal-gray-800 border-terminal-gray-600 text-terminal-cyan text-sm',
-        block: 'block w-full p-4 bg-terminal-black-light border-terminal-gray-700 text-terminal-green overflow-x-auto',
+        default: 'bg-card border-border text-primary',
+        inline: 'bg-muted border-border text-accent text-sm',
+        block: 'block w-full p-4 bg-card border-border text-primary overflow-x-auto',
       },
       size: {
         sm: 'text-xs',

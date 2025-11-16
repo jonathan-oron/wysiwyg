@@ -7,7 +7,7 @@ const loadingVariants = cva('', {
   variants: {
     variant: {
       spinner: 'animate-spin rounded-full border-2 border-current border-t-transparent',
-      pulse: 'animate-pulse bg-terminal-gray-700 rounded',
+      pulse: 'animate-pulse bg-muted rounded',
       dots: 'flex gap-1',
     },
     size: {
@@ -103,7 +103,7 @@ const Skeleton = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('animate-pulse rounded-md bg-terminal-gray-700', className)}
+    className={cn('animate-pulse rounded-md bg-muted', className)}
     {...props}
   />
 ))

@@ -28,8 +28,8 @@ export const DocumentCard = ({ document }: DocumentCardProps) => {
   return (
     <Link to={`/editor/${document.id}`}>
       <Card
-        variant="terminal"
-        className="group hover:shadow-glow-cyan transition-all cursor-pointer h-full"
+        variant="highlighted"
+        className="group hover:shadow-accent transition-all cursor-pointer h-full"
       >
         <CardHeader>
           <div className="flex items-start justify-between">

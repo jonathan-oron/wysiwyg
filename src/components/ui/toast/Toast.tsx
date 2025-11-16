@@ -29,11 +29,11 @@ const toastVariants = cva(
       variant: {
         default: 'border-border bg-background text-foreground',
         success:
-          'success group border-success bg-terminal-black-light text-success',
+          'success group border-success bg-card text-success',
         warning:
-          'warning group border-warning bg-terminal-black-light text-warning',
+          'warning group border-warning bg-card text-warning',
         error:
-          'error group border-error bg-terminal-black-light text-error',
+          'error group border-error bg-card text-error',
       },
     },
     defaultVariants: {
@@ -64,7 +64,7 @@ const ToastAction = React.forwardRef<
   <ToastPrimitives.Action
     ref={ref}
     className={cn(
-      'inline-flex h-8 shrink-0 items-center justify-center rounded-md border border-primary bg-transparent px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-terminal-black-light focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.error]:border-error group-[.error]:hover:border-error/30 group-[.warning]:border-warning group-[.warning]:hover:border-warning/30 group-[.success]:border-success group-[.success]:hover:border-success/30 font-mono',
+      'inline-flex h-8 shrink-0 items-center justify-center rounded-md border border-primary bg-transparent px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-card focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.error]:border-error group-[.error]:hover:border-error/30 group-[.warning]:border-warning group-[.warning]:hover:border-warning/30 group-[.success]:border-success group-[.success]:hover:border-success/30 font-mono',
       className
     )}
     {...props}
