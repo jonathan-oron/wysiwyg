@@ -1,5 +1,6 @@
 import { Editor } from '@tiptap/react'
 import { Button, Separator, Tooltip, TooltipContent, TooltipProvider, TooltipTrigger, Input } from '@/components/ui'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 import {
   Bold,
   Italic,
@@ -82,19 +83,22 @@ export const EditorToolbar = ({
             />
           </div>
 
-          <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-            {isSaving && (
-              <>
-                <Save className="h-4 w-4 animate-pulse" />
-                <span>Saving...</span>
-              </>
-            )}
-            {!isSaving && lastSaved && (
-              <>
-                <Check className="h-4 w-4 text-primary" />
-                <span>Saved</span>
-              </>
-            )}
+          <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+              {isSaving && (
+                <>
+                  <Save className="h-4 w-4 animate-pulse" />
+                  <span>Saving...</span>
+                </>
+              )}
+              {!isSaving && lastSaved && (
+                <>
+                  <Check className="h-4 w-4 text-primary" />
+                  <span>Saved</span>
+                </>
+              )}
+            </div>
+            <ThemeToggle />
           </div>
         </div>
 

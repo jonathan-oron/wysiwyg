@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Button, Avatar, AvatarFallback, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 import { useAuth } from '@/features/auth/hooks/useAuth'
 import { Terminal, LogOut, FileText } from 'lucide-react'
 
@@ -15,6 +16,8 @@ export const Header = () => {
         </Link>
 
         <nav className="flex items-center space-x-4">
+          <ThemeToggle />
+
           {isAuthenticated ? (
             <>
               <Link to="/documents">

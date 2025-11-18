@@ -1,0 +1,170 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://designvibe.com/theme-schema.json",
+  "title": "DesignVibe Theme Schema",
+  "description": "JSON Schema for DesignVibe theme files",
+  "type": "object",
+  "required": ["$schema", "meta", "color", "font", "radius", "shadow"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "DTCG schema reference"
+    },
+    "meta": {
+      "type": "object",
+      "required": ["id", "name", "description", "category", "author", "version"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "description": "Unique theme identifier (kebab-case)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable theme name"
+        },
+        "description": {
+          "type": "string",
+          "description": "Theme description"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["light", "dark"],
+          "description": "Theme category"
+        },
+        "author": {
+          "type": "string",
+          "description": "Theme author"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "description": "Semantic version number"
+        }
+      }
+    },
+    "color": {
+      "type": "object",
+      "required": ["$type", "palette", "semantic"],
+      "properties": {
+        "$type": {
+          "const": "color"
+        },
+        "palette": {
+          "type": "object",
+          "description": "Color palette - theme-specific colors"
+        },
+        "semantic": {
+          "type": "object",
+          "required": [
+            "$type",
+            "background",
+            "background-elevated",
+            "foreground",
+            "foreground-muted",
+            "primary",
+            "primary-hover",
+            "success",
+            "warning",
+            "error",
+            "info",
+            "accent",
+            "border",
+            "border-focus",
+            "input-background",
+            "secondary",
+            "secondary-foreground",
+            "muted"
+          ],
+          "properties": {
+            "$type": {
+              "const": "color"
+            }
+          },
+          "description": "Semantic color tokens - required for all themes"
+        }
+      }
+    },
+    "font": {
+      "type": "object",
+      "required": ["family", "size", "weight", "lineHeight"],
+      "properties": {
+        "family": {
+          "type": "object",
+          "required": ["$type", "sans", "mono"],
+          "properties": {
+            "$type": {
+              "const": "fontFamily"
+            }
+          }
+        },
+        "size": {
+          "type": "object",
+          "required": ["$type"],
+          "properties": {
+            "$type": {
+              "const": "dimension"
+            }
+          }
+        },
+        "weight": {
+          "type": "object",
+          "required": ["$type"],
+          "properties": {
+            "$type": {
+              "const": "fontWeight"
+            }
+          }
+        },
+        "lineHeight": {
+          "type": "object",
+          "required": ["$type"],
+          "properties": {
+            "$type": {
+              "const": "number"
+            }
+          }
+        }
+      }
+    },
+    "radius": {
+      "type": "object",
+      "required": ["$type", "none", "sm", "base", "md", "lg", "xl", "full"],
+      "properties": {
+        "$type": {
+          "const": "dimension"
+        }
+      }
+    },
+    "shadow": {
+      "type": "object",
+      "required": ["$type", "sm", "base", "md", "lg"],
+      "properties": {
+        "$type": {
+          "const": "shadow"
+        }
+      }
+    },
+    "transition": {
+      "type": "object",
+      "properties": {
+        "duration": {
+          "type": "object",
+          "properties": {
+            "$type": {
+              "const": "duration"
+            }
+          }
+        },
+        "timing": {
+          "type": "object",
+          "properties": {
+            "$type": {
+              "const": "cubicBezier"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -15,7 +15,7 @@ export default {
         foreground: 'var(--color-semantic-foreground)',
         primary: {
           DEFAULT: 'var(--color-semantic-primary)',
-          foreground: 'var(--color-palette-surface-base)',
+          foreground: 'var(--color-palette-surface-elevated)',
           hover: 'var(--color-semantic-primary-hover)',
         },
         secondary: {
@@ -24,7 +24,7 @@ export default {
         },
         destructive: {
           DEFAULT: 'var(--color-semantic-error)',
-          foreground: 'var(--color-palette-surface-base)',
+          foreground: 'var(--color-palette-surface-elevated)',
         },
         muted: {
           DEFAULT: 'var(--color-semantic-muted)',
@@ -32,7 +32,7 @@ export default {
         },
         accent: {
           DEFAULT: 'var(--color-semantic-accent)',
-          foreground: 'var(--color-palette-surface-base)',
+          foreground: 'var(--color-palette-surface-elevated)',
         },
         popover: {
           DEFAULT: 'var(--color-semantic-background-elevated)',
@@ -46,9 +46,27 @@ export default {
         warning: 'var(--color-semantic-warning)',
         error: 'var(--color-semantic-error)',
         info: 'var(--color-semantic-info)',
+        // K-pop Rainbow theme palette colors (available when theme active)
+        'soft-pink': 'var(--color-palette-soft-pink, #FFD6E8)',
+        'soft-lavender': 'var(--color-palette-soft-lavender, #E6D9FF)',
+        'soft-mint': 'var(--color-palette-soft-mint, #D0F4EA)',
+        'soft-peach': 'var(--color-palette-soft-peach, #FFE5D9)',
+        'soft-sky': 'var(--color-palette-soft-sky, #D4E9FF)',
+        'soft-lemon': 'var(--color-palette-soft-lemon, #FFF9D0)',
+        'vibrant-pink': 'var(--color-palette-vibrant-pink, #FF1F8E)',
+        'vibrant-purple': 'var(--color-palette-vibrant-purple, #A855F7)',
+        'vibrant-blue': 'var(--color-palette-vibrant-blue, #3B82F6)',
+        'vibrant-cyan': 'var(--color-palette-vibrant-cyan, #06B6D4)',
+        'vibrant-green': 'var(--color-palette-vibrant-green, #10B981)',
+        'vibrant-yellow': 'var(--color-palette-vibrant-yellow, #FBBF24)',
+        'vibrant-orange': 'var(--color-palette-vibrant-orange, #F97316)',
+        'brand-primary': 'var(--color-palette-brand-primary, #FF6B9D)',
+        'brand-secondary': 'var(--color-palette-brand-secondary, #C084FC)',
+        'brand-tertiary': 'var(--color-palette-brand-tertiary, #60A5FA)',
       },
       fontFamily: {
         sans: 'var(--font-family-sans)'.split(',').map(f => f.trim().replace(/"/g, '')),
+        display: 'var(--font-family-display, var(--font-family-sans))'.split(',').map(f => f.trim().replace(/"/g, '')),
         mono: 'var(--font-family-mono)'.split(',').map(f => f.trim().replace(/"/g, '')),
       },
       fontSize: {
@@ -61,12 +79,14 @@ export default {
         '3xl': 'var(--font-size-3xl)',
         '4xl': 'var(--font-size-4xl)',
         '5xl': 'var(--font-size-5xl)',
+        '6xl': 'var(--font-size-6xl, var(--font-size-5xl))',
       },
       fontWeight: {
         normal: 'var(--font-weight-normal)',
         medium: 'var(--font-weight-medium)',
         semibold: 'var(--font-weight-semibold)',
         bold: 'var(--font-weight-bold)',
+        extrabold: 'var(--font-weight-extrabold, var(--font-weight-bold))',
       },
       lineHeight: {
         tight: 'var(--font-lineHeight-tight)',
@@ -99,6 +119,8 @@ export default {
         md: 'var(--radius-md)',
         lg: 'var(--radius-lg)',
         xl: 'var(--radius-xl)',
+        '2xl': 'var(--radius-2xl, var(--radius-xl))',
+        '3xl': 'var(--radius-3xl, var(--radius-xl))',
         full: 'var(--radius-full)',
       },
       boxShadow: {
@@ -106,16 +128,23 @@ export default {
         DEFAULT: 'var(--shadow-base)',
         md: 'var(--shadow-md)',
         lg: 'var(--shadow-lg)',
+        xl: 'var(--shadow-xl, var(--shadow-lg))',
         focus: 'var(--shadow-focus)',
         accent: 'var(--shadow-accent)',
+        'accent-strong': 'var(--shadow-accent-strong, var(--shadow-accent))',
+        'accent-medium': 'var(--shadow-accent-medium, var(--shadow-accent))',
+        'accent-multi': 'var(--shadow-accent-multi, var(--shadow-accent))',
+        'highlight': 'var(--shadow-highlight, var(--shadow-sm))',
       },
       transitionDuration: {
         fast: 'var(--transition-duration-fast)',
         DEFAULT: 'var(--transition-duration-base)',
         slow: 'var(--transition-duration-slow)',
+        slower: 'var(--transition-duration-slower, var(--transition-duration-slow))',
       },
       transitionTimingFunction: {
         DEFAULT: 'var(--transition-timing-ease)',
+        bounce: 'var(--transition-timing-bounce, var(--transition-timing-ease))',
       },
       borderWidth: {
         0: 'var(--border-width-0)',

@@ -1,4 +1,5 @@
 @import './tokens.css';
+@import './theme-transitions.css';
 
 @tailwind base;
 @tailwind components;
@@ -16,9 +17,92 @@
 }
 
 @layer components {
+  /* Gradient text effects (primarily for K-pop Rainbow theme) */
+  .text-gradient-primary {
+    background: linear-gradient(
+      135deg,
+      var(--color-palette-vibrant-pink, var(--color-semantic-primary)) 0%,
+      var(--color-palette-vibrant-purple, var(--color-semantic-primary)) 25%,
+      var(--color-palette-vibrant-blue, var(--color-semantic-accent)) 50%,
+      var(--color-palette-vibrant-cyan, var(--color-semantic-accent)) 75%,
+      var(--color-palette-vibrant-green, var(--color-semantic-success)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-brand {
+    background: linear-gradient(
+      135deg,
+      var(--color-palette-brand-primary, var(--color-semantic-primary)) 0%,
+      var(--color-palette-brand-secondary, var(--color-semantic-accent)) 50%,
+      var(--color-palette-brand-tertiary, var(--color-semantic-accent)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-soft {
+    background: linear-gradient(
+      135deg,
+      var(--color-palette-soft-pink, var(--color-semantic-muted)) 0%,
+      var(--color-palette-soft-lavender, var(--color-semantic-secondary)) 50%,
+      var(--color-palette-soft-sky, var(--color-semantic-info)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   /* Text effect utilities */
   .text-glow {
     text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+  }
+
+  .text-glow-strong {
+    text-shadow: 0 0 10px var(--color-palette-vibrant-pink, var(--color-semantic-primary)),
+                 0 0 20px var(--color-palette-vibrant-pink, var(--color-semantic-primary));
+  }
+
+  .text-glow-medium {
+    text-shadow: 0 0 10px var(--color-palette-vibrant-purple, var(--color-semantic-accent)),
+                 0 0 20px var(--color-palette-vibrant-purple, var(--color-semantic-accent));
+  }
+
+  .text-glow-multi {
+    text-shadow:
+      0 0 10px var(--color-palette-vibrant-pink, var(--color-semantic-primary)),
+      0 0 20px var(--color-palette-vibrant-purple, var(--color-semantic-accent)),
+      0 0 30px var(--color-palette-vibrant-blue, var(--color-semantic-info));
+  }
+
+  /* Shimmer effect (primarily for K-pop Rainbow theme) */
+  .shimmer-effect {
+    position: relative;
+  }
+
+  .shimmer-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+      radial-gradient(circle, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+    background-size: 50px 50px, 80px 80px;
+    background-position: 0 0, 40px 60px;
+    pointer-events: none;
+    opacity: 0.3;
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.5; }
   }
 
   .scanline-effect {

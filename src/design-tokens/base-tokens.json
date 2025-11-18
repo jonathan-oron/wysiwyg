@@ -1,0 +1,196 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format.dtcg.json",
+  "$description": "Base design tokens - Universal, theme-independent values",
+  "spacing": {
+    "$type": "dimension",
+    "$description": "Spacing scale used across all themes",
+    "0": {
+      "$value": "0",
+      "$description": "No spacing"
+    },
+    "1": {
+      "$value": "0.25rem",
+      "$description": "4px spacing"
+    },
+    "1.5": {
+      "$value": "0.375rem",
+      "$description": "6px spacing"
+    },
+    "2": {
+      "$value": "0.5rem",
+      "$description": "8px spacing"
+    },
+    "2.5": {
+      "$value": "0.625rem",
+      "$description": "10px spacing"
+    },
+    "3": {
+      "$value": "0.75rem",
+      "$description": "12px spacing"
+    },
+    "3.5": {
+      "$value": "0.875rem",
+      "$description": "14px spacing"
+    },
+    "4": {
+      "$value": "1rem",
+      "$description": "16px spacing"
+    },
+    "5": {
+      "$value": "1.25rem",
+      "$description": "20px spacing"
+    },
+    "6": {
+      "$value": "1.5rem",
+      "$description": "24px spacing"
+    },
+    "7": {
+      "$value": "1.75rem",
+      "$description": "28px spacing"
+    },
+    "8": {
+      "$value": "2rem",
+      "$description": "32px spacing"
+    },
+    "10": {
+      "$value": "2.5rem",
+      "$description": "40px spacing"
+    },
+    "12": {
+      "$value": "3rem",
+      "$description": "48px spacing"
+    },
+    "16": {
+      "$value": "4rem",
+      "$description": "64px spacing"
+    },
+    "20": {
+      "$value": "5rem",
+      "$description": "80px spacing"
+    },
+    "24": {
+      "$value": "6rem",
+      "$description": "96px spacing"
+    }
+  },
+  "border": {
+    "width": {
+      "$type": "dimension",
+      "$description": "Standard border widths",
+      "0": {
+        "$value": "0",
+        "$description": "No border"
+      },
+      "1": {
+        "$value": "1px",
+        "$description": "1px border"
+      },
+      "2": {
+        "$value": "2px",
+        "$description": "2px border"
+      },
+      "4": {
+        "$value": "4px",
+        "$description": "4px border"
+      }
+    }
+  },
+  "opacity": {
+    "$type": "number",
+    "$description": "Opacity scale for transparency effects",
+    "0": {
+      "$value": "0",
+      "$description": "Fully transparent"
+    },
+    "10": {
+      "$value": "0.1",
+      "$description": "10% opacity"
+    },
+    "20": {
+      "$value": "0.2",
+      "$description": "20% opacity"
+    },
+    "30": {
+      "$value": "0.3",
+      "$description": "30% opacity"
+    },
+    "40": {
+      "$value": "0.4",
+      "$description": "40% opacity"
+    },
+    "50": {
+      "$value": "0.5",
+      "$description": "50% opacity"
+    },
+    "60": {
+      "$value": "0.6",
+      "$description": "60% opacity"
+    },
+    "70": {
+      "$value": "0.7",
+      "$description": "70% opacity"
+    },
+    "80": {
+      "$value": "0.8",
+      "$description": "80% opacity"
+    },
+    "90": {
+      "$value": "0.9",
+      "$description": "90% opacity"
+    },
+    "100": {
+      "$value": "1",
+      "$description": "Fully opaque"
+    }
+  },
+  "zIndex": {
+    "$type": "number",
+    "$description": "Z-index layering scale",
+    "base": {
+      "$value": "0",
+      "$description": "Base z-index"
+    },
+    "dropdown": {
+      "$value": "10",
+      "$description": "Dropdown menus"
+    },
+    "sticky": {
+      "$value": "20",
+      "$description": "Sticky elements"
+    },
+    "fixed": {
+      "$value": "30",
+      "$description": "Fixed positioned elements"
+    },
+    "overlay": {
+      "$value": "40",
+      "$description": "Modal backdrops and overlays"
+    },
+    "modal": {
+      "$value": "50",
+      "$description": "Modal dialogs"
+    },
+    "popover": {
+      "$value": "60",
+      "$description": "Popovers and dropdowns"
+    },
+    "tooltip": {
+      "$value": "70",
+      "$description": "Tooltips"
+    },
+    "toast": {
+      "$value": "100",
+      "$description": "Toast notifications (highest layer)"
+    }
+  },
+  "transition": {
+    "timing": {
+      "$type": "cubicBezier",
+      "$description": "Standard easing functions",
+      "ease": {
+        "$value": [0.4, 0, 0.2, 1],
+        "$description": "Standard easing function"
+      }
+    }
+  }
+}

@@ -10,7 +10,9 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build-tokens": "node src/design-tokens/build-tokens.js"
+    "build-tokens": "node src/design-tokens/build-tokens.js",
+    "generate-theme-types": "node src/design-tokens/generate-theme-types.js",
+    "build-themes": "npm run build-tokens && npm run generate-theme-types"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

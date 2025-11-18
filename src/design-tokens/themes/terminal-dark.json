@@ -1,0 +1,423 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format.dtcg.json",
+  "meta": {
+    "id": "terminal-dark",
+    "name": "Terminal Dark",
+    "description": "Cyberpunk terminal aesthetic with neon green accents",
+    "category": "dark",
+    "author": "DesignVibe",
+    "version": "1.0.0"
+  },
+  "color": {
+    "$type": "color",
+    "palette": {
+      "$description": "Base color palette - do not use directly, use semantic tokens instead",
+      "surface": {
+        "base": {
+          "$value": "#0a0e14",
+          "$description": "Base surface color"
+        },
+        "elevated": {
+          "$value": "#151a21",
+          "$description": "Elevated surface color"
+        }
+      },
+      "brand": {
+        "primary": {
+          "$value": "#00ff41",
+          "$description": "Primary brand color"
+        },
+        "primary-hover": {
+          "$value": "#00cc34",
+          "$description": "Primary brand hover state"
+        }
+      },
+      "feedback": {
+        "warning": {
+          "$value": "#ffb000",
+          "$description": "Warning state color"
+        },
+        "error": {
+          "$value": "#ff3333",
+          "$description": "Error state color"
+        },
+        "info": {
+          "$value": "#5ccfe6",
+          "$description": "Info state color"
+        }
+      },
+      "accent": {
+        "primary": {
+          "$value": "#00e5ff",
+          "$description": "Primary accent color"
+        },
+        "secondary": {
+          "$value": "#c792ea",
+          "$description": "Secondary accent color"
+        }
+      },
+      "neutral": {
+        "50": {
+          "$value": "#f5f5f5",
+          "$description": "Lightest neutral"
+        },
+        "100": {
+          "$value": "#e8e8e8",
+          "$description": "Very light neutral"
+        },
+        "200": {
+          "$value": "#d1d1d1",
+          "$description": "Light neutral"
+        },
+        "300": {
+          "$value": "#b4b4b4",
+          "$description": "Medium-light neutral"
+        },
+        "400": {
+          "$value": "#8a8a8a",
+          "$description": "Medium neutral"
+        },
+        "500": {
+          "$value": "#6b6b6b",
+          "$description": "Medium-dark neutral"
+        },
+        "600": {
+          "$value": "#4a4a4a",
+          "$description": "Dark neutral"
+        },
+        "700": {
+          "$value": "#2d2d2d",
+          "$description": "Very dark neutral"
+        },
+        "800": {
+          "$value": "#1a1a1a",
+          "$description": "Near black neutral"
+        },
+        "900": {
+          "$value": "#0f0f0f",
+          "$description": "Darkest neutral"
+        }
+      }
+    },
+    "semantic": {
+      "$type": "color",
+      "background": {
+        "$value": "{color.palette.surface.base}",
+        "$description": "Primary background color"
+      },
+      "background-elevated": {
+        "$value": "{color.palette.surface.elevated}",
+        "$description": "Elevated surface background"
+      },
+      "foreground": {
+        "$value": "{color.palette.brand.primary}",
+        "$description": "Primary text color"
+      },
+      "foreground-muted": {
+        "$value": "{color.palette.neutral.400}",
+        "$description": "Muted text color"
+      },
+      "primary": {
+        "$value": "{color.palette.brand.primary}",
+        "$description": "Primary brand color"
+      },
+      "primary-hover": {
+        "$value": "{color.palette.brand.primary-hover}",
+        "$description": "Primary hover state"
+      },
+      "success": {
+        "$value": "{color.palette.brand.primary}",
+        "$description": "Success state color"
+      },
+      "warning": {
+        "$value": "{color.palette.feedback.warning}",
+        "$description": "Warning state color"
+      },
+      "error": {
+        "$value": "{color.palette.feedback.error}",
+        "$description": "Error state color"
+      },
+      "info": {
+        "$value": "{color.palette.feedback.info}",
+        "$description": "Info state color"
+      },
+      "accent": {
+        "$value": "{color.palette.accent.primary}",
+        "$description": "Primary accent color"
+      },
+      "border": {
+        "$value": "{color.palette.neutral.700}",
+        "$description": "Default border color"
+      },
+      "border-focus": {
+        "$value": "{color.palette.brand.primary}",
+        "$description": "Focused border color"
+      },
+      "input-background": {
+        "$value": "{color.palette.surface.elevated}",
+        "$description": "Input background color"
+      },
+      "secondary": {
+        "$value": "{color.palette.neutral.700}",
+        "$description": "Secondary background color"
+      },
+      "secondary-foreground": {
+        "$value": "{color.palette.brand.primary}",
+        "$description": "Secondary foreground color"
+      },
+      "muted": {
+        "$value": "{color.palette.neutral.800}",
+        "$description": "Muted background color"
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "sans": {
+        "$value": ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+        "$description": "Sans-serif font stack for UI"
+      },
+      "mono": {
+        "$value": ["JetBrains Mono", "Fira Code", "Consolas", "Monaco", "monospace"],
+        "$description": "Monospace font stack for code and terminal elements"
+      }
+    },
+    "size": {
+      "$type": "dimension",
+      "xs": {
+        "$value": "0.75rem",
+        "$description": "12px - Extra small text"
+      },
+      "sm": {
+        "$value": "0.875rem",
+        "$description": "14px - Small text"
+      },
+      "base": {
+        "$value": "1rem",
+        "$description": "16px - Base text size"
+      },
+      "lg": {
+        "$value": "1.125rem",
+        "$description": "18px - Large text"
+      },
+      "xl": {
+        "$value": "1.25rem",
+        "$description": "20px - Extra large text"
+      },
+      "2xl": {
+        "$value": "1.5rem",
+        "$description": "24px - 2X large text"
+      },
+      "3xl": {
+        "$value": "1.875rem",
+        "$description": "30px - 3X large text"
+      },
+      "4xl": {
+        "$value": "2.25rem",
+        "$description": "36px - 4X large text"
+      },
+      "5xl": {
+        "$value": "3rem",
+        "$description": "48px - 5X large text"
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "normal": {
+        "$value": "400",
+        "$description": "Normal font weight"
+      },
+      "medium": {
+        "$value": "500",
+        "$description": "Medium font weight"
+      },
+      "semibold": {
+        "$value": "600",
+        "$description": "Semibold font weight"
+      },
+      "bold": {
+        "$value": "700",
+        "$description": "Bold font weight"
+      }
+    },
+    "lineHeight": {
+      "$type": "number",
+      "tight": {
+        "$value": "1.25",
+        "$description": "Tight line height"
+      },
+      "normal": {
+        "$value": "1.5",
+        "$description": "Normal line height"
+      },
+      "relaxed": {
+        "$value": "1.75",
+        "$description": "Relaxed line height"
+      }
+    }
+  },
+  "radius": {
+    "$type": "dimension",
+    "none": {
+      "$value": "0",
+      "$description": "No border radius"
+    },
+    "sm": {
+      "$value": "0.125rem",
+      "$description": "2px - Small border radius"
+    },
+    "base": {
+      "$value": "0.25rem",
+      "$description": "4px - Base border radius"
+    },
+    "md": {
+      "$value": "0.375rem",
+      "$description": "6px - Medium border radius"
+    },
+    "lg": {
+      "$value": "0.5rem",
+      "$description": "8px - Large border radius"
+    },
+    "xl": {
+      "$value": "0.75rem",
+      "$description": "12px - Extra large border radius"
+    },
+    "full": {
+      "$value": "9999px",
+      "$description": "Fully rounded"
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "sm": {
+      "$value": {
+        "offsetX": "0",
+        "offsetY": "1px",
+        "blur": "2px",
+        "spread": "0",
+        "color": "rgba(0, 0, 0, 0.5)"
+      },
+      "$description": "Small shadow"
+    },
+    "base": {
+      "$value": {
+        "offsetX": "0",
+        "offsetY": "2px",
+        "blur": "4px",
+        "spread": "0",
+        "color": "rgba(0, 0, 0, 0.6)"
+      },
+      "$description": "Base shadow"
+    },
+    "md": {
+      "$value": {
+        "offsetX": "0",
+        "offsetY": "4px",
+        "blur": "6px",
+        "spread": "-1px",
+        "color": "rgba(0, 0, 0, 0.7)"
+      },
+      "$description": "Medium shadow"
+    },
+    "lg": {
+      "$value": {
+        "offsetX": "0",
+        "offsetY": "10px",
+        "blur": "15px",
+        "spread": "-3px",
+        "color": "rgba(0, 0, 0, 0.8)"
+      },
+      "$description": "Large shadow"
+    },
+    "focus": {
+      "$value": {
+        "offsetX": "0",
+        "offsetY": "0",
+        "blur": "10px",
+        "spread": "0",
+        "color": "rgba(0, 255, 65, 0.3)"
+      },
+      "$description": "Focus state glow effect"
+    },
+    "accent": {
+      "$value": {
+        "offsetX": "0",
+        "offsetY": "0",
+        "blur": "10px",
+        "spread": "0",
+        "color": "rgba(0, 229, 255, 0.3)"
+      },
+      "$description": "Accent glow effect"
+    }
+  },
+  "transition": {
+    "duration": {
+      "$type": "duration",
+      "fast": {
+        "$value": "150ms",
+        "$description": "Fast transition duration"
+      },
+      "base": {
+        "$value": "200ms",
+        "$description": "Base transition duration"
+      },
+      "slow": {
+        "$value": "300ms",
+        "$description": "Slow transition duration"
+      }
+    }
+  },
+  "size": {
+    "$type": "dimension",
+    "$description": "Common component sizes",
+    "icon": {
+      "xs": {
+        "$value": "0.5rem",
+        "$description": "8px - Extra small icon"
+      },
+      "sm": {
+        "$value": "0.75rem",
+        "$description": "12px - Small icon"
+      },
+      "md": {
+        "$value": "0.875rem",
+        "$description": "14px - Medium icon"
+      },
+      "base": {
+        "$value": "1rem",
+        "$description": "16px - Base icon size"
+      },
+      "lg": {
+        "$value": "1.25rem",
+        "$description": "20px - Large icon"
+      },
+      "xl": {
+        "$value": "1.5rem",
+        "$description": "24px - Extra large icon"
+      }
+    },
+    "input": {
+      "height": {
+        "$value": "2.5rem",
+        "$description": "40px - Standard input height"
+      },
+      "min-width": {
+        "$value": "8rem",
+        "$description": "128px - Minimum input width"
+      }
+    },
+    "textarea": {
+      "min-height": {
+        "$value": "5rem",
+        "$description": "80px - Minimum textarea height"
+      }
+    },
+    "dialog": {
+      "max-width": {
+        "$value": "32rem",
+        "$description": "512px - Maximum dialog width"
+      }
+    }
+  }
+}
