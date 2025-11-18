@@ -45,9 +45,11 @@ function resolveReference(value, currentPath = '') {
  */
 function shadowToCSS(shadow) {
   if (typeof shadow === 'string') return shadow;
-  if (!shadow.offsetX) return shadow;
+  if (typeof shadow !== 'object' || shadow === null) return shadow;
+  if (!shadow.offsetX && shadow.offsetX !== '0') return JSON.stringify(shadow);
 
-  return `${shadow.offsetX} ${shadow.offsetY} ${shadow.blur} ${shadow.spread || '0'} ${shadow.color}`;
+  const spread = shadow.spread !== undefined ? ` ${shadow.spread}` : '';
+  return `${shadow.offsetX} ${shadow.offsetY} ${shadow.blur}${spread} ${shadow.color}`;
 }
 
 /**
@@ -66,7 +68,10 @@ function arrayToCSS(arr, type) {
 /**
  * Recursively process tokens and generate CSS variables
  */
-function processTokens(obj, path = '', cssVars = []) {
+function processTokens(obj, path = '', cssVars = [], parentType = null) {
+  // Check if this object defines a type for its children
+  const currentType = obj.$type || parentType;
+
   for (const [key, value] of Object.entries(obj)) {
     // Skip metadata keys
     if (key.startsWith('$')) continue;
@@ -76,15 +81,18 @@ function processTokens(obj, path = '', cssVars = []) {
     // If this has a $value, it's a token
     if (value.$value !== undefined) {
       let cssValue = value.$value;
+      const tokenType = value.$type || currentType;
 
-      // Resolve references
-      cssValue = resolveReference(cssValue, currentPath);
-
-      // Convert special types
-      if (value.$type === 'shadow' && typeof cssValue === 'object') {
+      // Convert special types BEFORE resolving references
+      if (tokenType === 'shadow' && typeof cssValue === 'object' && !Array.isArray(cssValue)) {
         cssValue = shadowToCSS(cssValue);
       } else if (Array.isArray(cssValue)) {
-        cssValue = arrayToCSS(cssValue, value.$type);
+        cssValue = arrayToCSS(cssValue, tokenType);
+      }
+
+      // Resolve references (if cssValue is still a string with references)
+      if (typeof cssValue === 'string') {
+        cssValue = resolveReference(cssValue, currentPath);
       }
 
       // Store resolved value
@@ -94,8 +102,8 @@ function processTokens(obj, path = '', cssVars = []) {
       const cssVarName = tokenPathToCssVar(currentPath);
       cssVars.push(`  ${cssVarName}: ${cssValue};`);
     } else {
-      // Recurse into nested objects
-      processTokens(value, currentPath, cssVars);
+      // Recurse into nested objects, passing down the current type
+      processTokens(value, currentPath, cssVars, currentType);
     }
   }
 
