@@ -4,21 +4,21 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const cardVariants = cva(
-  'rounded-2xl border-2 bg-card text-card-foreground shadow-md transition-all duration-200',
+  'rounded-card border-strong bg-card text-card-foreground shadow-md transition-all duration-200',
   {
     variants: {
       variant: {
         default: 'border-soft-lavender hover:shadow-lg hover:border-soft-pink',
         highlighted: 'border-vibrant-purple shadow-accent-medium hover:shadow-accent-combined',
-        elevated: 'border-soft-lavender shadow-xl hover:shadow-depth hover:scale-[1.02]',
+        elevated: 'border-soft-lavender shadow-xl hover:shadow-depth hover:scale-[var(--animation-scale-active)]',
         soft: 'border-transparent bg-gradient-soft shadow-lg hover:shadow-accent-multi',
         brand: 'gradient-border shadow-xl hover:shadow-accent-combined',
       },
       padding: {
         none: '',
-        sm: 'p-5',
-        default: 'p-6',
-        lg: 'p-8',
+        sm: 'p-component-sm',
+        default: 'p-component',
+        lg: 'p-component-lg',
       },
     },
     defaultVariants: {
@@ -49,7 +49,7 @@ const CardHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('flex flex-col space-y-2 border-b-2 border-soft-lavender pb-4 mb-4', className)}
+    className={cn('flex flex-col space-y-2 border-b-strong border-soft-lavender pb-component-gap mb-component-gap', className)}
     {...props}
   />
 ))
@@ -96,7 +96,7 @@ const CardFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('flex items-center border-t-2 border-soft-lavender pt-4 mt-4', className)}
+    className={cn('flex items-center border-t-strong border-soft-lavender pt-component-gap mt-component-gap', className)}
     {...props}
   />
 ))

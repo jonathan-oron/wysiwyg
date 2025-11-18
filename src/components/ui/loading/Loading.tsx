@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 const loadingVariants = cva('', {
   variants: {
     variant: {
-      spinner: 'animate-spin rounded-full border-2 border-current border-t-transparent',
+      spinner: 'animate-spin rounded-full border-strong border-current border-t-transparent',
       pulse: 'animate-pulse bg-muted rounded',
       dots: 'flex gap-1',
     },
@@ -20,32 +20,32 @@ const loadingVariants = cva('', {
     {
       variant: 'spinner',
       size: 'sm',
-      className: 'h-4 w-4',
+      className: 'h-loading-sm w-loading-sm',
     },
     {
       variant: 'spinner',
       size: 'default',
-      className: 'h-6 w-6',
+      className: 'h-loading w-loading',
     },
     {
       variant: 'spinner',
       size: 'lg',
-      className: 'h-8 w-8',
+      className: 'h-loading-lg w-loading-lg',
     },
     {
       variant: 'pulse',
       size: 'sm',
-      className: 'h-4',
+      className: 'h-loading-sm',
     },
     {
       variant: 'pulse',
       size: 'default',
-      className: 'h-6',
+      className: 'h-loading',
     },
     {
       variant: 'pulse',
       size: 'lg',
-      className: 'h-8',
+      className: 'h-loading-lg',
     },
   ],
   defaultVariants: {
@@ -70,9 +70,9 @@ const Loading = React.forwardRef<HTMLDivElement, LoadingProps>(
           {...props}
         >
           <div className={cn(loadingVariants({ variant }))}>
-            <span className="h-2 w-2 bg-primary rounded-full animate-bounce [animation-delay:-0.3s]"></span>
-            <span className="h-2 w-2 bg-primary rounded-full animate-bounce [animation-delay:-0.15s]"></span>
-            <span className="h-2 w-2 bg-primary rounded-full animate-bounce"></span>
+            <span className="h-loading-dot w-loading-dot bg-primary rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+            <span className="h-loading-dot w-loading-dot bg-primary rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+            <span className="h-loading-dot w-loading-dot bg-primary rounded-full animate-bounce"></span>
           </div>
           {text && <span className="text-sm text-muted-foreground font-mono">{text}</span>}
         </div>

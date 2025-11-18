@@ -107,6 +107,21 @@ export default {
         16: 'var(--spacing-16)',
         20: 'var(--spacing-20)',
         24: 'var(--spacing-24)',
+        // Component spacing
+        'component-sm': 'var(--component-card-padding-sm)',
+        'component': 'var(--component-card-padding-default)',
+        'component-lg': 'var(--component-card-padding-lg)',
+        'component-gap': 'var(--component-card-gap-default)',
+        'button-x-sm': 'var(--component-button-padding-x-sm)',
+        'button-x': 'var(--component-button-padding-x-default)',
+        'button-x-lg': 'var(--component-button-padding-x-lg)',
+        'input-x': 'var(--component-input-padding-x)',
+        'input-y': 'var(--component-input-padding-y)',
+        'badge-x': 'var(--component-badge-padding-x)',
+        'badge-y': 'var(--component-badge-padding-y)',
+        'alert': 'var(--component-alert-padding-default)',
+        'dialog': 'var(--component-dialog-padding-default)',
+        'dialog-gap': 'var(--component-dialog-gap-default)',
       },
       borderRadius: {
         none: 'var(--radius-none)',
@@ -118,6 +133,15 @@ export default {
         '2xl': 'var(--radius-2xl)',
         '3xl': 'var(--radius-3xl)',
         full: 'var(--radius-full)',
+        // Component radius
+        'button-sm': 'var(--component-button-radius-sm)',
+        'button': 'var(--component-button-radius-default)',
+        'button-lg': 'var(--component-button-radius-lg)',
+        'input': 'var(--component-input-radius-default)',
+        'card': 'var(--component-card-radius-default)',
+        'badge': 'var(--component-badge-radius-default)',
+        'alert': 'var(--component-alert-radius-default)',
+        'dialog': 'var(--component-dialog-radius-default)',
       },
       boxShadow: {
         sm: 'var(--shadow-sm)',
@@ -157,6 +181,30 @@ export default {
         DEFAULT: 'var(--border-width-1)',
         2: 'var(--border-width-2)',
         4: 'var(--border-width-4)',
+        // Semantic borders
+        'border-default': 'var(--border-semantic-default)',
+        'border-strong': 'var(--border-semantic-strong)',
+        'border-thick': 'var(--border-semantic-thick)',
+      },
+      opacity: {
+        disabled: 'var(--opacity-disabled)',
+        muted: 'var(--opacity-muted)',
+        subtle: 'var(--opacity-subtle)',
+        hover: 'var(--opacity-hover)',
+      },
+      height: {
+        // Component heights
+        'button-sm': 'var(--component-button-height-sm)',
+        'button': 'var(--component-button-height-default)',
+        'button-lg': 'var(--component-button-height-lg)',
+        'input': 'var(--component-input-height-default)',
+      },
+      width: {
+        // Loading sizes
+        'loading-sm': 'var(--component-loading-size-sm)',
+        'loading': 'var(--component-loading-size-default)',
+        'loading-lg': 'var(--component-loading-size-lg)',
+        'loading-dot': 'var(--component-loading-dot-size)',
       },
       keyframes: {
         'accordion-down': {
@@ -173,17 +221,17 @@ export default {
         },
         sparkle: {
           '0%, 100%': {
-            opacity: '1',
+            opacity: 'var(--opacity-hover)',
             transform: 'scale(1) rotate(0deg)',
           },
           '50%': {
-            opacity: '0.5',
-            transform: 'scale(1.1) rotate(180deg)',
+            opacity: 'var(--opacity-disabled)',
+            transform: 'scale(var(--animation-scale-hover)) rotate(180deg)',
           },
         },
         float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(calc(-1 * var(--animation-translate-default)))' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-200% center' },
@@ -203,7 +251,7 @@ export default {
         },
         bounce: {
           '0%, 100%': {
-            transform: 'translateY(-5%)',
+            transform: 'translateY(calc(-1 * var(--animation-translate-sm)))',
             animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
           },
           '50%': {

@@ -4,12 +4,12 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { cn } from '@/lib/utils'
 
 const badgeVariants = cva(
-  'inline-flex items-center rounded-full border-2 px-3 py-1 text-xs font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 font-display tracking-wide shadow-sm',
+  'inline-flex items-center rounded-badge border-strong px-badge-x py-badge-y text-xs font-bold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 font-display tracking-wide shadow-sm',
   {
     variants: {
       variant: {
         default:
-          'border-vibrant-pink/30 bg-gradient-accent-warm text-white hover:shadow-accent-strong hover:scale-105',
+          'border-vibrant-pink/30 bg-gradient-accent-warm text-white hover:shadow-accent-strong hover:scale-[var(--animation-scale-hover)]',
         secondary:
           'border-soft-lavender bg-soft-lavender text-vibrant-purple hover:bg-soft-pink hover:shadow-md',
         success:
@@ -20,8 +20,8 @@ const badgeVariants = cva(
           'border-vibrant-pink/50 bg-soft-pink text-vibrant-pink hover:shadow-accent-strong',
         info: 'border-vibrant-cyan/50 bg-soft-sky text-vibrant-cyan hover:shadow-md',
         outline: 'border-vibrant-purple text-vibrant-purple bg-transparent hover:bg-soft-lavender',
-        vibrant: 'border-transparent bg-gradient-primary text-white hover:shadow-accent-multi hover:scale-105',
-        brand: 'border-brand-primary/30 bg-gradient-brand text-white hover:shadow-accent-combined hover:scale-105',
+        vibrant: 'border-transparent bg-gradient-primary text-white hover:shadow-accent-multi hover:scale-[var(--animation-scale-hover)]',
+        brand: 'border-brand-primary/30 bg-gradient-brand text-white hover:shadow-accent-combined hover:scale-[var(--animation-scale-hover)]',
       },
     },
     defaultVariants: {

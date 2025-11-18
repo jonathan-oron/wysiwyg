@@ -57,22 +57,22 @@
 
   /* Glow effects */
   .text-glow {
-    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+    text-shadow: 0 0 var(--animation-translate-default) currentColor, 0 0 calc(var(--animation-translate-default) * 2) currentColor;
   }
 
   .text-glow-strong {
-    text-shadow: 0 0 10px var(--color-palette-vibrant-pink), 0 0 20px var(--color-palette-vibrant-pink);
+    text-shadow: 0 0 var(--animation-translate-default) var(--color-palette-vibrant-pink), 0 0 calc(var(--animation-translate-default) * 2) var(--color-palette-vibrant-pink);
   }
 
   .text-glow-medium {
-    text-shadow: 0 0 10px var(--color-palette-vibrant-purple), 0 0 20px var(--color-palette-vibrant-purple);
+    text-shadow: 0 0 var(--animation-translate-default) var(--color-palette-vibrant-purple), 0 0 calc(var(--animation-translate-default) * 2) var(--color-palette-vibrant-purple);
   }
 
   .text-glow-multi {
     text-shadow:
-      0 0 10px var(--color-palette-vibrant-pink),
-      0 0 20px var(--color-palette-vibrant-purple),
-      0 0 30px var(--color-palette-vibrant-blue);
+      0 0 var(--animation-translate-default) var(--color-palette-vibrant-pink),
+      0 0 calc(var(--animation-translate-default) * 2) var(--color-palette-vibrant-purple),
+      0 0 calc(var(--animation-translate-default) * 3) var(--color-palette-vibrant-blue);
   }
 
   /* Shimmer effect */
@@ -137,12 +137,12 @@
       var(--color-palette-brand-tertiary) 100%
     );
     background-size: 200% 200%;
-    animation: shimmer 3s linear infinite;
+    animation: shimmer var(--transition-duration-slower) linear infinite;
   }
 
   .gradient-border {
     position: relative;
-    border: 2px solid transparent;
+    border: var(--border-semantic-strong) solid transparent;
     background: linear-gradient(
       var(--color-semantic-background-elevated),
       var(--color-semantic-background-elevated)
@@ -154,13 +154,13 @@
       var(--color-palette-brand-tertiary)
     ) border-box;
     background-size: 100% 100%, 200% 200%;
-    animation: shimmer 3s linear infinite;
+    animation: shimmer var(--transition-duration-slower) linear infinite;
   }
 
   /* Multi-color border animation */
   .gradient-border-multi {
     position: relative;
-    border: 2px solid transparent;
+    border: var(--border-semantic-strong) solid transparent;
     background: linear-gradient(
       var(--color-semantic-background-elevated),
       var(--color-semantic-background-elevated)
@@ -194,7 +194,7 @@
   }
 
   .prose h1 {
-    @apply text-4xl font-bold mb-4 mt-6 font-display;
+    @apply text-4xl font-bold mb-component-gap mt-component font-display;
     background: linear-gradient(135deg, var(--color-palette-vibrant-pink), var(--color-palette-vibrant-purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -202,7 +202,7 @@
   }
 
   .prose h2 {
-    @apply text-3xl font-bold mb-3 mt-5 font-display;
+    @apply text-3xl font-bold mb-3 mt-component-sm font-display;
     background: linear-gradient(135deg, var(--color-palette-vibrant-purple), var(--color-palette-vibrant-blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -210,7 +210,7 @@
   }
 
   .prose h3 {
-    @apply text-2xl font-bold mb-2 mt-4 font-display;
+    @apply text-2xl font-bold mb-2 mt-component-gap font-display;
     color: var(--color-palette-vibrant-purple);
   }
 
@@ -230,26 +230,26 @@
   }
 
   .prose p {
-    @apply mb-4 leading-relaxed;
+    @apply mb-component-gap leading-relaxed;
   }
 
   .prose a {
     @apply text-primary hover:text-primary-hover underline font-medium;
     text-decoration-color: var(--color-palette-vibrant-pink);
-    text-underline-offset: 2px;
-    transition: all 0.2s ease;
+    text-underline-offset: var(--spacing-1);
+    transition: all var(--transition-duration-base) ease;
   }
 
   .prose a:hover {
-    text-shadow: 0 0 8px var(--color-palette-vibrant-pink);
+    text-shadow: 0 0 var(--spacing-2) var(--color-palette-vibrant-pink);
   }
 
   .prose ul {
-    @apply list-disc list-inside mb-4 space-y-2;
+    @apply list-disc list-inside mb-component-gap space-y-2;
   }
 
   .prose ol {
-    @apply list-decimal list-inside mb-4 space-y-2;
+    @apply list-decimal list-inside mb-component-gap space-y-2;
   }
 
   .prose li {
@@ -266,8 +266,8 @@
   }
 
   .prose pre {
-    @apply bg-soft-pink border-2 border-soft-lavender rounded-xl p-4 overflow-x-auto mb-4;
-    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.1);
+    @apply bg-soft-pink border-2 border-soft-lavender rounded-input p-component-gap overflow-x-auto mb-component-gap;
+    box-shadow: 0 var(--spacing-1) var(--spacing-3) rgba(168, 85, 247, 0.1);
   }
 
   .prose pre code {
@@ -275,7 +275,7 @@
   }
 
   .prose blockquote {
-    @apply border-l-4 pl-4 italic my-4 rounded-r-lg py-2;
+    @apply border-l-4 pl-component-gap italic my-component-gap rounded-r-lg py-2;
     border-color: var(--color-palette-vibrant-pink);
     background: linear-gradient(
       to right,
@@ -286,7 +286,7 @@
   }
 
   .prose table {
-    @apply w-full border-collapse my-4 rounded-lg overflow-hidden;
+    @apply w-full border-collapse my-component-gap rounded-lg overflow-hidden;
   }
 
   .prose th {
@@ -302,12 +302,12 @@
 
   .prose tr:hover td {
     background: var(--color-palette-soft-pink);
-    transition: background 0.2s ease;
+    transition: background var(--transition-duration-base) ease;
   }
 
   .prose img {
-    @apply max-w-full h-auto rounded-2xl my-4;
-    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.2);
+    @apply max-w-full h-auto rounded-card my-component-gap;
+    box-shadow: 0 var(--spacing-2) var(--spacing-6) rgba(168, 85, 247, 0.2);
   }
 
   .prose strong {
@@ -321,7 +321,7 @@
   }
 
   .prose hr {
-    @apply my-8 border-0 h-1 rounded-full;
+    @apply my-component-lg border-0 h-1 rounded-full;
     background: linear-gradient(
       to right,
       var(--color-palette-vibrant-pink),
@@ -335,8 +335,8 @@
     @apply rounded px-1;
     background: linear-gradient(
       120deg,
-      rgba(255, 214, 232, 0.5) 0%,
-      rgba(230, 217, 255, 0.5) 100%
+      rgba(255, 214, 232, var(--opacity-disabled)) 0%,
+      rgba(230, 217, 255, var(--opacity-disabled)) 100%
     );
     color: var(--color-palette-neutral-900);
   }
